@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
-		<title> jQuery Wiggle </title>
-		<link rel="canonical" href="http://sizeof.cat/jquery/wiggle/">
-		<link rel="stylesheet" href="css/style.css">
+	    <meta charset="utf-8">
+	    <title> jQuery Wiggle </title>
+	    <link rel="canonical" href="http://sizeof.cat/jquery/wiggle/">
+	    <link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
 
 	</head>
@@ -49,7 +49,7 @@
 
 <tr>
 <td>Version</td>
-<td>1.0.0</td>
+<td>2.0.0</td>
 </tr>
 
 <tr>
@@ -93,7 +93,7 @@
 <p>As the last step, you trigger the <em>catWiggle()</em> function on the element you just created. In this case, we trigger the function on the image with the class <em>wiggle</em>.</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-	<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.wiggle&#39;</span><span class="p">).</span><span class="nx">catWiggle</span><span class="p">();</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.wiggle&#39;</span><span class="p">).</span><span class="nx">catWiggle</span><span class="p">();</span>
 <span class="p">});</span>
 </code></pre></div>
 
@@ -195,27 +195,27 @@
 <h2 id="demo">Demo</h2>
 
 <div id="wigglewrapper">
-	<img src="img/Calculator.png" alt="Calculator"/>
-	<img src="img/Calendar.png" alt="Calendar"/>
-	<img src="img/Camera.png" alt="Camera"/>
-	<img src="img/Clock.png" alt="Clock"/>
-	<img src="img/Contacts.png" alt="Contacts"/>
-	<img src="img/iPod.png" alt="iPod"/>
-	<img src="img/iTunes.png" alt="iTunes"/>
-	<img src="img/Mail.png" alt="Mail"/>
-	<img src="img/Maps.png" alt="Maps"/>
-	<img src="img/Music.png" alt="Music"/>
-	<img src="img/Notes.png" alt="Notes"/>
-	<img src="img/Phone.png" alt="Phone"/>
-	<img src="img/Safari.png" alt="Safari"/>
-	<img src="img/Settings.png" alt="Settings"/>
-	<img src="img/SMS.png" alt="SMS"/>
-	<img src="img/YouTube.png" alt="YouTube"/>
-	<div id="wrapperbuttons" style="clear:both">
-		<button id="buttonStart">Start All</button>&nbsp;
-		<button id="buttonRandom">Random</button>&nbsp;
-		<button id="buttonStop">Stop All</button>
-	</div>
+    <img src="img/wiggle/Calculator.png" alt="Calculator"/>
+    <img src="img/wiggle/Calendar.png" alt="Calendar"/>
+    <img src="img/wiggle/Camera.png" alt="Camera"/>
+    <img src="img/wiggle/Clock.png" alt="Clock"/>
+    <img src="img/wiggle/Contacts.png" alt="Contacts"/>
+    <img src="img/wiggle/iPod.png" alt="iPod"/>
+    <img src="img/wiggle/iTunes.png" alt="iTunes"/>
+    <img src="img/wiggle/Mail.png" alt="Mail"/>
+    <img src="img/wiggle/Maps.png" alt="Maps"/>
+    <img src="img/wiggle/Music.png" alt="Music"/>
+    <img src="img/wiggle/Notes.png" alt="Notes"/>
+    <img src="img/wiggle/Phone.png" alt="Phone"/>
+    <img src="img/wiggle/Safari.png" alt="Safari"/>
+    <img src="img/wiggle/Settings.png" alt="Settings"/>
+    <img src="img/wiggle/SMS.png" alt="SMS"/>
+    <img src="img/wiggle/YouTube.png" alt="YouTube"/>
+    <div id="wrapperbuttons" style="clear:both">
+        <button id="buttonStart">Start All</button>&nbsp;
+        <button id="buttonRandom">Random</button>&nbsp;
+        <button id="buttonStop">Stop All</button>
+    </div>
 </div>
 
 <style>#wigglewrapper{width:350px;margin:auto;padding:10px}#wigglewrapper img{float:left;cursor:pointer;margin:3px}#wrapperbuttons{border-top:1px solid #ddd;padding:15px}#wrapperbuttons button{font-weight:700;line-height:1;font-size:.8em;color:#444;border:none;text-shadow:0 1px 1px rgba(255,255,255,0.85);background-image:0;background-color:#fff;-webkit-border-radius:23px;-moz-border-radius:23px;-o-border-radus:23px;border-radisu:23px;-webkit-box-shadow:0 1px 2px rgba(0,0,0,0.5);-moz-box-shadow:0 1px 2px rgba(0,0,0,0.5);box-shadow:0 1px 2px rgba(0,0,0,0.5);padding:8px 10px}#wrapperbuttons button:hover{cursor:pointer}</style>
@@ -224,36 +224,36 @@
 <script src="js/jquery-wiggle.js"></script>
 <script>
 $(document).ready(function() {
-	var interval = null;
-	$('#logowiggle').click(function() {
-		if ($(this).catWiggle('is_wiggling')) {
-			$(this).catWiggle('stop');
-		}
-		else {
-			$(this).catWiggle('start');
-		}
-	});
-	$('div#wigglewrapper img').click(function() {
-		if ($(this).catWiggle('is_wiggling')) {
-			$(this).catWiggle('stop');
-		}
-		else {
-			$(this).catWiggle('start');
-		}
-	});
-	$('button#buttonStart').click(function() {
-		$('div#wigglewrapper img').catWiggle('start');
-	});
-	$('button#buttonStop').click(function() {
-		$('div#wigglewrapper img').catWiggle('stop');
-		clearInterval(interval);
-	});
-	$('button#buttonRandom').click(function() {
-		var size = $('div#wigglewrapper img').length;
-		interval = setInterval(function() {
-			$($('div#wigglewrapper img').get(Math.floor(Math.random() * size))).catWiggle('start', {limit: 5});
-		}, 1000);
-	});
+    var interval = null;
+    $('#logowiggle').click(function() {
+        if ($(this).catWiggle('is_wiggling')) {
+            $(this).catWiggle('stop');
+        }
+        else {
+            $(this).catWiggle('start');
+        }
+    });
+    $('div#wigglewrapper img').click(function() {
+        if ($(this).catWiggle('is_wiggling')) {
+            $(this).catWiggle('stop');
+        }
+        else {
+            $(this).catWiggle('start');
+        }
+    });
+    $('button#buttonStart').click(function() {
+        $('div#wigglewrapper img').catWiggle('start');
+    });
+    $('button#buttonStop').click(function() {
+        $('div#wigglewrapper img').catWiggle('stop');
+        clearInterval(interval);
+    });
+    $('button#buttonRandom').click(function() {
+        var size = $('div#wigglewrapper img').length;
+        interval = setInterval(function() {
+            $($('div#wigglewrapper img').get(Math.floor(Math.random() * size))).catWiggle('start', {limit: 5});
+        }, 1000);
+    });
 });
 </script>
 			</section>
